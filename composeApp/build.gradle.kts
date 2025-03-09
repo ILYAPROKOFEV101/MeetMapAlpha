@@ -66,5 +66,7 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+    implementation(project("authenticationservice"))
+
 }
 
