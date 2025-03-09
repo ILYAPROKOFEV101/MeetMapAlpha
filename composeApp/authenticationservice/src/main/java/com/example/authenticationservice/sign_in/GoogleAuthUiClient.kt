@@ -33,6 +33,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import kotlinx.coroutines.tasks.await
 import kotlin.coroutines.cancellation.CancellationException
+import com.example.authenticationservice.R
 
 
 class GoogleAuthUiClient(
