@@ -1,8 +1,8 @@
 [versions]
-agp = "8.5.2"
-android-compileSdk = "34"
-android-minSdk = "24"
-android-targetSdk = "34"
+agp = "8.9.0"
+android-compileSdk = "35"
+android-minSdk = "26"
+android-targetSdk = "35"
 androidx-activityCompose = "1.9.3"
 androidx-appcompat = "1.7.0"
 androidx-constraintlayout = "2.2.0"
@@ -14,6 +14,13 @@ androidx-test-junit = "1.2.1"
 compose-multiplatform = "1.7.0"
 junit = "4.13.2"
 kotlin = "2.1.0"
+lifecycleRuntimeKtx = "2.8.7"
+composeBom = "2024.09.00"
+googleGmsGoogleServices = "4.4.2"
+firebaseAuth = "23.2.0"
+credentials = "1.5.0-rc01"
+credentialsPlayServicesAuth = "1.3.0"
+googleid = "1.1.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -28,6 +35,19 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "credentials" }
+androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "credentialsPlayServicesAuth" }
+googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -36,3 +56,4 @@ composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-mu
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

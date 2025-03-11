@@ -41,6 +41,7 @@ android {
     namespace = "org.ilya.project"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
+
     defaultConfig {
         applicationId = "org.ilya.project"
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -65,8 +66,10 @@ android {
 }
 
 dependencies {
-    debugImplementation(compose.uiTooling)
-    implementation(project("authenticationservice"))
+    implementation(project(":authenticationservice2")) // или ":composeApp:authenticationservice2"
 
+    debugImplementation(compose.uiTooling)
+    implementation("org.ow2.asm:asm:9.7.1") // Пример добавления зависимости
+    implementation("androidx.compose.ui:ui:1.7.8") // Пример версии
 }
 
