@@ -207,50 +207,6 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:409555274758:android:c008015a73b0215fd90787",
-        "android_client_info": {
-          "package_name": "com.ilya.mylibrary"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "409555274758-e5rmst90ju6cb2am4inv2eg3dfdgiabt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.ilya.mylibrary",
-            "certificate_hash": "a77b47bd399694be5beb16f3aa009a36462e2a4c"
-          }
-        },
-        {
-          "client_id": "409555274758-6qdljvmd0rv0sdsm7730el10n6kpfj9d.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDY8-GDFuC6x_bbBMnQZiCEtFmXIc-3f_U"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "409555274758-6qdljvmd0rv0sdsm7730el10n6kpfj9d.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "409555274758-88e3tqa6vt9mh73qeuis43l0a9f9eafe.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.IlyaProkofev.MeetApp-IOS"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:409555274758:android:6a37ed329407d18cd90787",
         "android_client_info": {
           "package_name": "org.ilya.project"
