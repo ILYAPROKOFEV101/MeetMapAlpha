@@ -21,7 +21,7 @@ class GoogleAuthUiClient(
     private val oneTapClient: SignInClient
 ) {
 
-        private val auth = Firebase.auth
+    private val auth = Firebase.auth
 
     suspend fun signIn(): IntentSender? {
         val result = try {
@@ -73,7 +73,7 @@ class GoogleAuthUiClient(
         }
     }
 
-        suspend fun signOut() {
+    suspend fun signOut() {
             try {
                 oneTapClient.signOut().await()
                 auth.signOut()
@@ -85,7 +85,7 @@ class GoogleAuthUiClient(
             }
         }
 
-        fun getSignedInUser(): UserData? = auth.currentUser?.run {
+    fun getSignedInUser(): UserData? = auth.currentUser?.run {
             UserData(
                 userId = uid,
                 username = displayName,
@@ -106,6 +106,6 @@ class GoogleAuthUiClient(
             .build()
     }
 
-    }
+}
 
 

@@ -77,18 +77,6 @@ fun ProfileScreen(
 
 
 
-fun UID(userData: UserData?): String? {
-    return userData?.username
-}
-fun IMG(userData: UserData?): String? {
-    return userData?.profilePictureUrl
-}
-fun ID(userData: UserData?): String? {
-    return userData?.userId
-}
-
-
-
 
 
 

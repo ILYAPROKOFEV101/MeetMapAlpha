@@ -26,8 +26,8 @@ import androidx.navigation.compose.composable
 import com.ilya.mylibrary.Novigation.Destinations
 
 import kotlinx.coroutines.launch
-import com.ilya.mylibrary.sign_in.SignInScreen
-import com.ilya.mylibrary.sign_in.Wrong
+import com.ilya.mylibrary.SingInScreen.SignInScreen
+import com.ilya.mylibrary.Error.Wrong
 
 
 // Navigation.kt
@@ -151,5 +151,7 @@ fun AuthNavGraph(
         composable(Destinations.LOADING){
             LoadingCircle()
         }
+
+
     }
 }

@@ -17,8 +17,6 @@ fun registerUser(
     auth.createUserWithEmailAndPassword(email, password)
         .addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                // Registration successful
-                val user = auth.currentUser
                 Log.d("Registration", "User registered successfully")
                 onResult(true) // Пользователь успешно зарегистрирован
             } else {
