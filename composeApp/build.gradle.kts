@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.googleGmsGoogleServices)
 
+
 }
 
 kotlin {
@@ -71,6 +72,11 @@ dependencies {
 
     implementation(project(":authenticationservice"))
     implementation(project(":core"))
+    implementation(project(":Novigation"))
+    implementation(project(":MapService"))
+
+
+    implementation("com.yandex.android:maps.mobile:4.5.0-lite")
 
     // fierbase dependencies
     implementation("io.coil-kt:coil-compose:2.4.0")

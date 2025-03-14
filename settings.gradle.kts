@@ -5,6 +5,7 @@ pluginManagement {
     repositories {
         google {
             mavenContent {
+
                 includeGroupAndSubgroups("androidx")
                 includeGroupAndSubgroups("com.android")
                 includeGroupAndSubgroups("com.google")
@@ -32,3 +33,6 @@ include(":composeApp")
 include(":shared")
 include(":authenticationservice")
 include(":core")
+
+include(":Novigation")
+include(":MapService")
