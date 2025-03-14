@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MeetMap</string>
     <string name="web_client_id">409555274758-6qdljvmd0rv0sdsm7730el10n6kpfj9d.apps.googleusercontent.com</string>
-    <string name="logwithemail">Sing in using email</string>
-    <string name="Signin">Sing in</string>
+    <string name="logwithemail">Sign in using email</string>
+    <string name="Signin">Sign in</string>
     <string name="title_activity_main_menu">Main_menu</string>
     <string name="back">Back</string>
     <string name="name_of_plase"></string>
@@ -29,7 +29,7 @@
     <string name="no">No</string>
     <string name="addfriends">Add friends</string>
     <string name="title_activity_test">TestActivity</string>
-    <string name="singin">Sing in</string>
+    <string name="singin">Sign in</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="title_activity_social_map">SocialMapActivity</string>

@@ -72,11 +72,6 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 
 class AuthActivity : ComponentActivity() {
-    private lateinit var auth: FirebaseAuth
-    var leftop by mutableStateOf(true)
-    var username by mutableStateOf("")
-    var password by mutableStateOf("")
-    var cloth by mutableStateOf(true)
 
     private val googleAuthUiClient by lazy {
         GoogleAuthUiClient(

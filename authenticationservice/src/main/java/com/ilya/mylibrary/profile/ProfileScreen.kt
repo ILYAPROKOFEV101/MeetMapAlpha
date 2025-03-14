@@ -65,7 +65,6 @@ fun ProfileScreen(
             colors = ButtonDefaults.buttonColors(Color(0xFF03A9F4)),
             onClick = {
                 onSignOut() // Вызов функции выхода из системы
-                //navController.navigate(Destinations.LOGIN) // Навигация на экран профиля
             },
             modifier = Modifier.clip(RoundedCornerShape(90.dp)),
             shape = RoundedCornerShape(20.dp)
