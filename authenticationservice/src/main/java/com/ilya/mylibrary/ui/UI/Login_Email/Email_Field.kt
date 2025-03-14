@@ -39,17 +39,17 @@ import androidx.compose.ui.unit.sp
 
 
 
-@RequiresApi( Build.VERSION_CODES.O)
+@RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Email_field(
     modifier: Modifier = Modifier,
     font: FontFamily,
-    onTextReturn: (String) -> Unit // Callback для возврата текста
+    onTextReturn: (String) -> Unit // Колбэк для возврата текста
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     var email by remember { mutableStateOf("") }
-    var isFocused by remember { mutableStateOf(false) } // Состояние фокуса
+    var isFocused by remember { mutableStateOf(false) }
     val background_color = if (isSystemInDarkTheme())
         Color(0xFF191C20)
     else Color(0xFFFFFFFF)
@@ -58,21 +58,19 @@ fun Email_field(
     else
         Color(0xFF191C20)
 
-
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(background_color) // Используем цвет поверхности Material 3
+            .background(background_color)
             .padding(horizontal = 30.dp, vertical = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Текст, который будет над полем ввода
         Text(
             text = stringResource(id = R.string.email),
             fontSize = 20.sp,
-            color = text, // Цвет текста зависит от темы
+            color = text,
             textAlign = TextAlign.Start,
             modifier = Modifier.fillMaxWidth(),
             fontFamily = font
@@ -80,28 +78,29 @@ fun Email_field(
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // Поле ввода с использованием Material 3 TextField
         OutlinedTextField(
             value = email,
-            onValueChange = { email = it },
+            onValueChange = { newEmail ->
+                email = newEmail
+                onTextReturn(newEmail) // Вызываем колбэк с новым значением
+            },
             label = { Text(text = "Введите email", style = TextStyle(fontFamily = font)) },
             modifier = Modifier
                 .fillMaxWidth()
-                .onFocusChanged { focusState -> isFocused = focusState.isFocused }, // Отслеживаем фокус
+                .onFocusChanged { focusState -> isFocused = focusState.isFocused },
             textStyle = TextStyle(fontSize = 20.sp, fontFamily = font),
-
             colors = TextFieldDefaults.colors(
-                focusedTextColor = text, // Цвет текста при фокусе
-                unfocusedTextColor = text, // Цвет текста без фокуса
-                focusedLabelColor = text, // Цвет метки при фокусе
-                unfocusedLabelColor = text, // Цвет метки без фокуса
-                focusedContainerColor = background_color, // Цвет фона при фокусе
-                unfocusedContainerColor = background_color, // Цвет фона без фокуса
-                focusedIndicatorColor = text, // Цвет рамки при фокусе
-                unfocusedIndicatorColor = Color.Transparent, // Прозрачная рамка без фокуса
-                cursorColor = text, // Цвет курсора
-                focusedPlaceholderColor = text, // Цвет плейсхолдера при фокусе
-                unfocusedPlaceholderColor = text // Цвет плейсхолдера без фокуса
+                focusedTextColor = text,
+                unfocusedTextColor = text,
+                focusedLabelColor = text,
+                unfocusedLabelColor = text,
+                focusedContainerColor = background_color,
+                unfocusedContainerColor = background_color,
+                focusedIndicatorColor = text,
+                unfocusedIndicatorColor = Color.Transparent,
+                cursorColor = text,
+                focusedPlaceholderColor = text,
+                unfocusedPlaceholderColor = text
             ),
             keyboardOptions = KeyboardOptions(
                 imeAction = ImeAction.Done,
@@ -109,14 +108,10 @@ fun Email_field(
             ),
             keyboardActions = KeyboardActions(
                 onDone = {
-                    keyboardController?.hide() // Скрываем клавиатуру
-                    if (email.isNotEmpty()) {
-                        onTextReturn(email) // Возвращаем текст через callback
-                    }
+                    keyboardController?.hide()
                 }
             ),
-            singleLine = true // Однострочное поле ввода
+            singleLine = true
         )
     }
 }
-

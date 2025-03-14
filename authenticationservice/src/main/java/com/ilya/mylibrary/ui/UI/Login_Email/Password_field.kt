@@ -88,6 +88,9 @@ fun PasswordField(
             onValueChange = {
                 password = it
                 passwordError = it.length < 6 // Проверяем длину пароля
+                if(password.length > 6 ) {
+                    onTextReturn(password)
+                }
             },
             label = { Text(text = "Введите пароль", style = TextStyle(fontFamily = font)) },
             modifier = Modifier.fillMaxWidth(),
