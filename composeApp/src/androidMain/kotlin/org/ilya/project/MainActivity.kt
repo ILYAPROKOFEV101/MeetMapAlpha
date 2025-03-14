@@ -84,6 +84,8 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
+
+
                     AuthNavGraph(
                         navController = navController,
                         googleAuthUiClient = googleAuthUiClient,
