@@ -1,7 +1,10 @@
 package com.ilya.mylibrary
 
+import android.content.Intent
 import android.os.Build
+import android.os.Build.ID
 import android.os.Bundle
+import android.provider.CloudMediaProviderContract.MediaColumns.ID
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
@@ -29,17 +32,20 @@ class AuthActivity : ComponentActivity() {
         FirebaseApp.initializeApp(this)
 
         setContent {
+
+
             ComposeGoogleSignInCleanArchitectureTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val navController = rememberNavController()
-                    AuthNavGraph(
+                    /*AuthNavGraph(
                         navController = navController,
                         googleAuthUiClient = googleAuthUiClient,
                         activity = this
-                    )
+                    )*/
+
                 }
             }
         }

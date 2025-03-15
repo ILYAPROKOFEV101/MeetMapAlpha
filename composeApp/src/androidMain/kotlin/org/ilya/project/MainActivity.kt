@@ -1,5 +1,7 @@
 package org.ilya.project
 
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -15,17 +17,21 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.ComposeGoogleSignInCleanArchitectureTheme
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.ilya.mapservice.ViewModel.MapsActivity
 import com.ilya.mylibrary.AuthNavGraph
 import com.ilya.mylibrary.GoogleAuthUiClient
 import com.ilya.mylibrary.NavGraphMain
 import com.ilya.mylibrary.Novigation.Destinations
 import com.yandex.mapkit.MapKitFactory
 import com.yandex.mapkit.geometry.Point
+import com.yandex.mapkit.mapview.MapView
 
 
 class MainActivity : ComponentActivity() {
@@ -45,31 +51,18 @@ class MainActivity : ComponentActivity() {
         )
     }
 
+    private lateinit var mapView: MapView
+
+
+
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
 
 
-        FirebaseApp.initializeApp(this)
-        MapKitFactory.setApiKey("c48e8c80-6757-49c0-902b-564357bc0792")
         setContent {
-            val markers = remember {
-                listOf(
-                    Point(55.751574, 37.573856), // Москва
-                    Point(59.934280, 30.335098)   // Санкт-Петербург
-                )
-            }
-
-            val route = remember {
-                listOf(
-                    Point(55.751574, 37.573856),
-                    Point(56.326944, 44.0075),    // Нижний Новгород
-                    Point(59.934280, 30.335098)
-                )
-            }
-
             ComposeGoogleSignInCleanArchitectureTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -86,19 +79,28 @@ class MainActivity : ComponentActivity() {
 
 
 
-                    AuthNavGraph(
+                    /*AuthNavGraph(
                         navController = navController,
                         googleAuthUiClient = googleAuthUiClient,
                         activity = this
-                    )
-
-
-                   /* YandexMap(
-                        modifier = Modifier.fillMaxSize(),
-                        markers = markers,
-                        route = route,
-
                     )*/
+
+                    if (ContextCompat.checkSelfPermission(
+                            this,
+                            android.Manifest.permission.ACCESS_FINE_LOCATION
+                        ) == PackageManager.PERMISSION_GRANTED
+                    ) {
+                        val intent = Intent(this@MainActivity, MapsActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        // Запросить разрешение на доступ к местоположению
+                        ActivityCompat.requestPermissions(
+                            this,
+                            arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                            1
+                        )
+                    }
+
                 }
             }
         }

@@ -5,4 +5,20 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <application>
+
+        <meta-data
+            android:name="com.yandex.maps.mobile.apikey"
+            android:value="0c1f7f97-d840-46cd-b974-df658b94b039" />
+
+        <activity
+            android:name=".ViewModel.MapsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+
+
+
+    </application>
+
 </manifest>

@@ -3,9 +3,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <meta-data
-        android:name="com.yandex.maps.mobile.apikey"
-        android:value="c48e8c80-6757-49c0-902b-564357bc0792" />
 
     <application>
         <activity
@@ -13,6 +10,11 @@
             android:exported="true"
             android:label="@string/title_activity_auth"
             android:theme="@style/Theme.MeetMapAlpha" />
+
+        <meta-data
+            android:name="com.yandex.maps.mobile.apikey"
+            android:value="0c1f7f97-d840-46cd-b974-df658b94b039" />
+
     </application>
 
 </manifest>
